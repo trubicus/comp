@@ -8,11 +8,13 @@ public class TestNOT {
 
 	@Test
 	public void testNOT() {
-		NOT not = new NOT(true);
-		assertFalse(not.out());
+		NOT not = new NOT();
+		not.connectA(new Value(true));
+		assertFalse(not.output());
 		
-		not = new NOT(false);
-		assertTrue(not.out());
+		not = new NOT();
+		not.connectA(new Value(false));
+		assertTrue(not.output());
 	}
 
 }

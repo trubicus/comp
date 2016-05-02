@@ -8,17 +8,25 @@ public class TestAND{
 	
 	@Test
 	public void andTest(){
-		AND and = new AND(false, false);
-		assertFalse(and.out());
+		AND and = new AND();
+		and.connectA(new Value(false));
+		and.connectB(new Value(false));
+		assertFalse(and.output());
 		
-		and = new AND(false, true);
-		assertFalse(and.out());
+		and = new AND();
+		and.connectA(new Value(false));
+		and.connectB(new Value(true));
+		assertFalse(and.output());
 
-		and = new AND(true, false);
-		assertFalse(and.out());
+		and = new AND();
+		and.connectA(new Value(true));
+		and.connectB(new Value(false));
+		assertFalse(and.output());
 
-		and = new AND(true, true);
-		assertTrue(and.out());
+		and = new AND();
+		and.connectA(new Value(true));
+		and.connectB(new Value(true));
+		assertTrue(and.output());
 	}
 
 }

@@ -9,16 +9,27 @@ public class TestOR {
 	@Test
 	public void testOR(){
 		
-		OR or = new OR(false, false);
-		assertFalse(or.out());
+		OR or = new OR();
+		or.connectA(new Value(false));
+		or.connectB(new Value(false));
+		assertFalse(or.output());
+
+		or = new OR();
+		or.connectA(new Value(false));
+		or.connectB(new Value(true));
+		assertTrue(or.output());
 		
-		or = new OR(false, true);
-		assertTrue(or.out());
+		or = new OR();
+		or.connectA(new Value(true));
+		or.connectB(new Value(false));
+		assertTrue(or.output());
 
-		or = new OR(true, false);
-		assertTrue(or.out());
+		or = new OR();
+		or.connectA(new Value(true));
+		or.connectB(new Value(true));
+		assertTrue(or.output());
 
-		or = new OR(true, true);
-		assertTrue(or.out());
+
+
 	}
 }

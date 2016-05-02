@@ -8,17 +8,25 @@ public class TestXOR {
 
 	@Test
 	public void test() {
-		XOR xor = new XOR(false, false);
-		assertFalse(xor.out());
+		XOR xor = new XOR();
+		xor.connectA(new Value(false));
+		xor.connectB(new Value(false));
+		assertFalse(xor.output());
 		
-		xor = new XOR(false, true);
-		assertTrue(xor.out());
+		xor = new XOR();
+		xor.connectA(new Value(false));
+		xor.connectB(new Value(true));
+		assertTrue(xor.output());
 		
-		xor = new XOR(true, false);
-		assertTrue(xor.out());
+		xor = new XOR();
+		xor.connectA(new Value(true));
+		xor.connectB(new Value(false));
+		assertTrue(xor.output());
 
-		xor = new XOR(true, true);
-		assertFalse(xor.out());
+		xor = new XOR();
+		xor.connectA(new Value(true));
+		xor.connectB(new Value(true));
+		assertFalse(xor.output());
 	}
 
 }

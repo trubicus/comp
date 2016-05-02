@@ -1,18 +1,26 @@
 package comp.logic.gates;
 
-public class XOR {
+public class XOR extends Gate {
 	
-	private boolean A;
-	private boolean B;
-	private boolean out;
+	public Gate A;
+	public Gate B;
 	
-	public XOR(boolean A, boolean B) {
-		this.A = A;
-		this.B = B;
-		this.out = this.A ^ this.B;
+	public XOR() {
 	}
+
+  @Override
+  public boolean output() {
+    return A.output() ^ B.output();
+  }
+
+  @Override
+  public void connectA(Gate output) {
+    this.A = output;
+  }
+
+  @Override
+  public void connectB(Gate output) {
+    this.B = output;
+  }
 	
-	public boolean out(){
-		return out;
-	}
 }

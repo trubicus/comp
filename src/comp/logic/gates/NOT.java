@@ -1,17 +1,27 @@
 package comp.logic.gates;
 
-public class NOT {
+public class NOT extends Gate {
 	
-	private boolean in;
-	private boolean out;
+	public Gate A;
 	
-	public NOT(boolean in){
-		this.in = in;
-		this.out = !(this.in);
+	public NOT(){
 	}
 	
-	public boolean out(){
-		return out;
-	}
+
+  @Override
+  public boolean output() {
+    return !A.output();
+  }
+
+
+  @Override
+  public void connectA(Gate output) {
+   this.A = output; 
+  }
+
+
+  @Override
+  public void connectB(Gate output) {
+  }
 	
 }
