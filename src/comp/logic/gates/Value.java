@@ -20,5 +20,9 @@ public class Value extends Gate {
   @Override
   public void connectB(Gate output) {
   }
+  
+  public void setValue(boolean value){
+    this.value = value;
+  }
 
 }
